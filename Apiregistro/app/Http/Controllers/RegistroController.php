@@ -12,19 +12,17 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        $registro = Registro::all();
+        $usuarios = Registro::all();
         // return response()->json($registro);
-        return view('auth.registro');
+        return view('auth.registro', ['usuarios' => $usuarios]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    /*Registrar*/
     public function store(Request $request)
     {
         $request -> validate([
             'nombre' => 'required',
-            'cedula' => 'required',
+            'cedula' => 'required |unique',
             'telefono' => 'required',
             'direccion' => 'required'
         ]);
@@ -38,8 +36,7 @@ class RegistroController extends Controller
         return view('welcome', ['usuario'=> $usuarios]);
     }
 
-    /**
-     * Display the specified resource.
+    /*Listar
      */
     public function show(string $cedula)
     {
@@ -47,8 +44,7 @@ class RegistroController extends Controller
         return response()->json($registro);
     }
 
-    /**
-     * Update the specified resource in storage.
+    /*Actualizar
      */
     public function update(Request $request, string $cedula)
     {
@@ -56,12 +52,7 @@ class RegistroController extends Controller
         return response()->json($registro);
     }   
 
-    /**
-     * Remove the specified resource from storage.
-     */
-
-/**
- * Elimina el recurso especificado del almacenamiento.
+/* Elimina el recurso especificado del almacenamiento.
  */
 public function destroy(string $cedula)
 {

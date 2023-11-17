@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\ListarController;
+use App\Http\Controllers\ExportarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +19,12 @@ use App\Http\Controllers\RegistroController;
 Route::get('/', function () {
     return view('welcome');
 });
-// Muestra el formulario de registro
-Route::get('/registro', [RegistroController::class, "index"])->name('listar');
-
 // Procesa el formulario de registro
 Route::post('/registro', [RegistroController::class, "store"]);
+
+// Muestra el formulario de registro
+Route::get('/registro', [RegistroController::class, "index"])->name('register');
+Route::get('/usuarios', [ListarController::class, "index"])->name('listar');
+Route::get('/usuarios/{id}/exportar-pdf', [ExportarController::class, 'exportarPDF'])->name('usuarios.exportar-pdf');
 
 // Route::get('welcome',[RegistroController::class,"index"])->name('welcome');
