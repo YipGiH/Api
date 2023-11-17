@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 // Muestra el formulario de registro
-Route::get('/listar', [RegistroController::class, "index"])->name('listar');
+Route::get('/registro', [RegistroController::class, "index"])->name('listar');
 
 // Procesa el formulario de registro
-Route::post('registro/procesar', [RegistroController::class, "store"]);
+Route::post('/registro', [RegistroController::class, "store"]);
 
-Route::get('welcome',[RegistroController::class,"index"])->name('welcome');
+// Route::get('welcome',[RegistroController::class,"index"])->name('welcome');

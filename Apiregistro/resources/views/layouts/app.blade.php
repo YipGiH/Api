@@ -15,7 +15,7 @@
           
             <div class="w-4/5">
                 
-                <h3 class="pl-10">
+                <h3 class="pl-[40%]">
                 @yield('contenido')
                 </h3>
                

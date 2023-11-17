@@ -13,7 +13,8 @@ class RegistroController extends Controller
     public function index()
     {
         $registro = Registro::all();
-        return response()->json($registro);
+        // return response()->json($registro);
+        return view('auth.registro');
     }
 
     /**
@@ -34,7 +35,7 @@ class RegistroController extends Controller
             'telefono' => $request -> telefono,
             'direccion' => $request -> direccion
         ]);
-        return response()->json($registro);
+        return view('welcome', ['usuario'=> $usuarios]);
     }
 
     /**

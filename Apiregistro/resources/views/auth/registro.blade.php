@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Registrate en devstagram
+    Registrate
 @endsection
 
 @section('contenido')
-    <div class="md:flex md:justify-center md:gap-10 md:items-center">  
-        <div class="md:w-6/12 p-5">
-            <img src="{{ asset('img/img1.jpeg') }}" alt="Imagen del contenedor del registro">
-        </div>
-        <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
+    <div class="w-full justify-center items-center">  
+        <div class="w-[600px] bg-white p-6 rounded-lg shadow-xl">
             <form action="" method="POST">
                 @csrf
                 <div class="mb-5">
@@ -21,25 +18,25 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="cedula" class="mb-2 block uppercase text-gray-500 font-bold">UserName</label>
-                    <input type="text" id="cedula" name="cedula" placeholder="UserName" class="border p-3 w-full rounded-lg">
+                    <label for="cedula" class="mb-2 block uppercase text-gray-500 font-bold">Cedula</label>
+                    <input type="text" id="cedula" name="cedula" placeholder="Cedula" class="border p-3 w-full rounded-lg">
                     @error('cedula')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="mb-5">
-                    <label for="telefono" class="mb-2 block uppercase text-gray-500 font-bold">E-mail</label>
-                    <input type="text" id="telefono" name="telefono" placeholder="E-mail" class="border p-3 w-full rounded-lg">
+                    <label for="telefono" class="mb-2 block uppercase text-gray-500 font-bold">Telefono</label>
+                    <input type="text" id="telefono" name="telefono" placeholder="Telefono" class="border p-3 w-full rounded-lg">
                     @error('telefono')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="mb-5">
-                    <label for="dirección" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
-                    <input type="dirección" id="dirección" name="password" placeholder="Password" class="border p-3 w-full rounded-lg">
-                    @error('dirección')
+                    <label for="direccion" class="mb-2 block uppercase text-gray-500 font-bold">Dirección</label>
+                    <input type="direccion" id="direccion" name="direccion" placeholder="Dirección" class="border p-3 w-full rounded-lg">
+                    @error('direccion')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
