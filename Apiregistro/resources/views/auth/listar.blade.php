@@ -25,7 +25,7 @@
                         <th class="px-4 py-4">{{ $usuario->cedula }}</th>
                         <th class="px-4 py-4">{{ $usuario->telefono }}</th>
                         <th class="px-4 py-4">{{ $usuario->direccion }}</th>
-                        <th><a class="px-3 py-2 rounded-full bg-red-500 hover:bg-red-400" href="{{ route('usuarios.exportar-pdf') }}" class="btn btn-primary">Exportar</a></th>
+                        <th><a class="px-3 py-2 rounded-full bg-red-500 hover:bg-red-400" href="{{ route('usuarios.exportar-pdf', ['id' => $usuario->id]) }}" class="btn btn-primary">Exportar</a></th>
                     </tr>
                 @endforeach
             </tbody>

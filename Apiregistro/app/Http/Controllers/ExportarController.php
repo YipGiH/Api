@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Registro;
 use Illuminate\Http\Request;
+use PDF;
 
 class ExportarController extends Controller
 {
     public function exportarPDF($id) {
-        $usuarios = User::find($id);
+        $usuarios = Registro::find($id);
     
         if (!$usuarios) {
             abort(404); 
